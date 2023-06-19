@@ -20,7 +20,13 @@ const studentSlice = createSlice({
   name: "students",
   initialState: studentInitialState,
   reducers: {
-    addStudent: (state, action) => {},
+    addStudent: (state, action) => {
+      state.students.push({
+        id: state.currentId + 1,
+        nama: action.payload.namalengkap,
+        jurusan: action.payload.jurusan,
+      });
+    },
     deleteStudent: () => {},
     updateStudent: () => {},
   },
